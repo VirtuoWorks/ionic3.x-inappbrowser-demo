@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { IabServiceProvider } from '../providers/iab-service/iab-service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,9 +25,11 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    InAppBrowser,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    IabServiceProvider
   ]
 })
 export class AppModule {}

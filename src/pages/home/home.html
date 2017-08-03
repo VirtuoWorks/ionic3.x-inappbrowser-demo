@@ -1,14 +1,26 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Basic Usage
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="iabService.openSettings()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <button ion-button block icon-left (click)="openWebpage()">
+    <ion-icon name="search"></ion-icon>
+    Open DuckDuckGo.com
+  </button>
+
+  <button ion-button block icon-left (click)="openWebpage('https://ionicframework.com/docs/native/in-app-browser/')">
+    <ion-icon name="ionic"></ion-icon>
+    Open Ionic Documentation
+  </button>
+
 </ion-content>
