@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>
       Basic Usage
     </ion-title>
@@ -13,14 +16,30 @@
 
 <ion-content padding>
 
-  <button ion-button block icon-left (click)="openWebpage()">
-    <ion-icon name="search"></ion-icon>
-    Open DuckDuckGo.com
-  </button>
-
-  <button ion-button block icon-left (click)="openWebpage('https://ionicframework.com/docs/native/in-app-browser/')">
+  <button padding ion-button clear icon-left (click)="openWebpage('https://ionicframework.com/docs/native/in-app-browser/')">
     <ion-icon name="ionic"></ion-icon>
     Open Ionic Documentation
   </button>
+
+  <ion-card no-padding>
+    <ion-card-header>
+      Open any URL
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="homeForm" novalidate nopadding no-padding>
+        <ion-list>
+          <ion-item text-wrap no-padding>
+            <ion-label floating>URL</ion-label>
+            <ion-input type="url" formControlName="url"></ion-input>
+          </ion-item>
+          <ion-item no-padding>
+            <button type="submit" ion-button item-end (click)="checkInput()">
+              Open URL
+            </button>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

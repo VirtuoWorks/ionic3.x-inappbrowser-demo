@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="test.ionic.inappbrowser" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Ionic In App Browser Test</name>
-    <description>Ionic In App Browser Test application.</description>
+<widget id="com.virtuoworks.demo.ionic.inappbrowser" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Ionic In App Browser Demo</name>
+    <description>Ionic In App Browser Demo application.</description>
     <author email="sebastien.guillon@virtuoworks.com" href="https://www.virtuoworks.com/">VirtuoWorks</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.114:8101" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="http://192.168.1.114:8100" />

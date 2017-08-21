@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { InAppBrowserObject } from '@ionic-native/in-app-browser';
 
@@ -10,15 +11,29 @@ import { IabServiceProvider } from '../../providers/iab-service/iab-service';
 })
 export class HomePage {
   private browser: InAppBrowserObject;
-  private url: string;
+  private homeForm: FormGroup;
 
   constructor(
-    private iabService: IabServiceProvider,
+    private formBuilder: FormBuilder,
+    private iabService: IabServiceProvider
   ) {
+    this.homeForm = this.formBuilder.group({
+      url: ['https://', Validators.required],
+    });
   }
 
-  openWebpage(url?: string): void {
-    const browseUrl = (url || this.url) || 'https://duckduckgo.com/';
-    this.browser = this.iabService.iab.create(browseUrl, '_blank', this.iabService.iabSettings);
+  openWebpage(url: string): void {
+    if (url !== '') {
+      this.browser = this.iabService.iab.create(url, '_blank', this.iabService.iabSettings);
+    } else {
+      // display alert
+    }
   }
+
+  checkInput() {
+    if (this.homeForm.value.url !== '') {
+      this.openWebpage(this.homeForm.value.url);
+    }
+  }
+
 }

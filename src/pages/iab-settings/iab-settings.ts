@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, ViewController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IonicPage, ViewController } from 'ionic-angular';
 
 import { IabServiceProvider } from '../../providers/iab-service/iab-service';
 

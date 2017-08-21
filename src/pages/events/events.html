@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Events</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="iabService.openSettings()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="container">
+    <button ion-button (click)="openHiddenBrowser()">Open hidden browser</button>
+    <p>
+      Opens a hidden browser. When the <code>loadstop</code> is received, show the browser window.<br>
+      <ion-icon color="warning" name="information-circle"></ion-icon>
+        <strong>Overrides settings : </strong>
+        The <code>hidden</code> option will be temporarily set to <code>'yes'</code> when opening the browser.
+    </p>
+
+    
+    <h2 (click)="update()">Log of events {{ log.length }}</h2>
+
+    <div class="console">
+      <p *ngFor="let line of log; index as i;" [innerHTML]="i + '. ' + line"></p>
+    </div>
+  </div>
+
+</ion-content>

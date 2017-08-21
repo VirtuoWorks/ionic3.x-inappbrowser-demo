@@ -1,0 +1,25 @@
+page-events {
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .console {
+    background: map-get($colors, light);
+    color: map-get($colors, dark);
+    flex: 1;
+    padding: $content-padding;
+    overflow-y: scroll;
+
+    p {
+      padding: 5px 0;
+      margin: 0;
+      border-bottom: 1px solid transparentize(map-get($colors, dark), 0.95);
+    }
+    p:last-of-type {
+      border: none;
+    }
+
+  }
+}
