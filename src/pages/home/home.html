@@ -14,9 +14,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <button padding ion-button clear icon-left (click)="openWebpage('https://ionicframework.com/docs/native/in-app-browser/')">
+  <button ion-button clear icon-left (click)="openWebpage('https://ionicframework.com/docs/native/in-app-browser/')">
     <ion-icon name="ionic"></ion-icon>
     Open Ionic Documentation
   </button>
@@ -27,19 +27,23 @@
     </ion-card-header>
     <ion-card-content>
       <form [formGroup]="homeForm" novalidate nopadding no-padding>
-        <ion-list>
-          <ion-item text-wrap no-padding>
-            <ion-label floating>URL</ion-label>
-            <ion-input type="url" formControlName="url"></ion-input>
-          </ion-item>
-          <ion-item no-padding>
-            <button type="submit" ion-button item-end (click)="checkInput()">
-              Open URL
-            </button>
-          </ion-item>
-        </ion-list>
+        <ion-item text-wrap no-padding>
+          <ion-label floating>URL</ion-label>
+          <ion-input type="url" formControlName="url"></ion-input>
+        </ion-item>
+        <ion-item text-wrap no-padding>
+          <ion-label>Open in</ion-label>
+          <ion-select formControlName="target">
+            <ion-option *ngFor="let target of targets" value="{{ target  }}">{{ target  }}</ion-option>
+          </ion-select>
+        </ion-item>
       </form>
     </ion-card-content>
+    <ion-item>
+      <button type="submit" ion-button item-end (click)="checkInput('_blank')">
+          Open
+      </button>
+    </ion-item>
   </ion-card>
 
 </ion-content>

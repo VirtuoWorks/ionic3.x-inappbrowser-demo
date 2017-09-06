@@ -3,7 +3,7 @@
     <name>Ionic In App Browser Demo</name>
     <description>Ionic In App Browser Demo application.</description>
     <author email="sebastien.guillon@virtuoworks.com" href="https://www.virtuoworks.com/">VirtuoWorks</author>
-    <content original-src="index.html" src="http://192.168.1.114:8101" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="http://192.168.1.114:8100" />
